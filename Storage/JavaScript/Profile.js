@@ -337,8 +337,51 @@ function handleDragOver(event) {
   event.stopPropagation();
 }
 
-const inputs = document.querySelectorAll("input[type='text']");
+function ShowForms(form, formInput) {
+  formInput.style.display = "flex";
+  form.style.display = "flex";
+}
+function ShowForms1(form, formInput, element) {
+  var formKey = element.getAttribute("form-key");
+  var title = form.querySelector("#formTitle");
+  var honorsContainers = [
+    null,
+    document.querySelector("#honorsContainer1"),
+    document.querySelector("#honorsContainer2"),
+    document.querySelector("#honorsContainer3"),
+  ];
+  var awardTemplate = document.querySelector("#awardTemplate");
+  var addDetailsButton = document.querySelector("#addDetailsButton");
 
+  if (formKey == 1) {
+    title.innerHTML = "Honor";
+  } else if (formKey == 2) {
+    title.innerHTML = "Awards";
+  } else if (formKey == 3) {
+    title.innerHTML = "Certificate";
+  }
+
+  formInput.style.display = "flex";
+  form.style.display = "flex";
+
+  addDetailsButton.addEventListener("click", () => {
+    var awardName = form.querySelector("#awardName").value.trim();
+    var awardDate = form.querySelector("#awardDate").value;
+
+    if (awardName && awardDate) {
+      let newElement = awardTemplate.content.cloneNode(true);
+      newElement.querySelector("#awardTitle").innerText = awardName;
+      newElement.querySelector("#awardDate").innerText = awardDate;
+      honorsContainers[formKey].appendChild(newElement);
+    } 
+  });
+}
+
+function Closeform(form, formInput) {
+  formInput.style.display = "none";
+  form.style.display = "none";
+}
+const inputs = document.querySelectorAll("input[type='text']");
 inputs.forEach((input) => {
   input.addEventListener("input", () => {
     RemoveError(input);

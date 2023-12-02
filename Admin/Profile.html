@@ -235,138 +235,127 @@
                     </form>
                 </div>
                 <div class="formContent active">
-                    <div class="formTitle">Educational Attainment</div>
-                    <div class="inputContainer2">
-                        <label for="">Graduation Date</label>
-                        <input type="date" class="inputBox" id="" name="">
-                        <div class="errorMessage"></div>
+                    <div class="formTitle">
+                        <span>Educational Attainment</span>
+                        <button class="mainButton" type="button"
+                            onclick="ShowForms(educAddForm, formsInput)">Add</button>
                     </div>
-                    <div class="inputContainer2">
-                        <label for="">Institution Attended</label>
-                        <input type="text" class="inputBox" id="" name="" placeholder="Civil Status" autocomplete="off"
-                            spellcheck="false">
-                        <div class="errorMessage"></div>
-                    </div>
-                    <div class="inputContainer2">
-                        <label for="">Course</label>
-                        <input type="text" class="inputBox" id="" name="" placeholder="Civil Status" autocomplete="off"
-                            spellcheck="false">
-                        <div class="errorMessage"></div>
-                    </div>
-                    <div class="formTitle">Accomplishments</div>
-                    <div class="honorsContainer" id="honorsContainer1">
-                        <div class="formTitle1">Honors</div>
-                        <div class="formTitle2"><span>Highlight academic recognition that you have received</span>
-                            <iconify-icon icon="zondicons:add-solid"></iconify-icon>
-                        </div>
-                        <div class="awardContainer">
-                            <div class="awardTitle">
-                                <span id="awardTitle">Suma langit nawa</span>
-                                <iconify-icon icon="solar:pen-bold"></iconify-icon>
-                                <iconify-icon icon="tabler:trash-filled"></iconify-icon>
+                    <div class="educationalAttainmentContainer">
+                        <div class="educationContainer">
+                            <div class="educationTitle">
+                                <span id="schoolEd">Bulacan State University</span>
+                                <span id="awardEd">Magna Cum Laude</span>
                             </div>
-                            <div class="awardDetails">
-                                <span id="awardDate">2019</span>
-                                <span id="awardLocation">Dyan lang</span>
+                            <div class="educationTitle">
+                                <div class="courseEd">
+                                    <span id="courseEd">Bachelor of Science in Information and Technology</span>
+                                    <span id="majorEd">Major in Web and Mobile Development</span>
+                                </div>
+                                <span id="dateEd">Class of 2023</span>
+                            </div>
+                            <div class="educOptions">
+                                <button>
+                                    <iconify-icon icon="solar:pen-bold"></iconify-icon>
+                                    Edit
+                                </button>
+                                <button>
+                                    <iconify-icon icon="tabler:trash-filled"></iconify-icon>
+                                    Delete
+                                </button>
                             </div>
                         </div>
-
-                    </div>
-                    <div class="honorsContainer" id="honorsContainer2">
-                        <div class="formTitle1">Awards</div>
-                        <div class="formTitle2"><span>Highlight awards that you have received</span>
-                            <iconify-icon icon="zondicons:add-solid"></iconify-icon>
-                        </div>
-                        <div class="awardContainer">
-                            <div class="awardTitle">
-                                <span id="awardTitle">Suma langit nawa</span>
-                                <iconify-icon icon="solar:pen-bold"></iconify-icon>
-                                <iconify-icon icon="tabler:trash-filled"></iconify-icon>
-                            </div>
-                            <div class="awardDetails">
-                                <span id="awardDate">2019</span>
-                                <span id="awardLocation">Dyan lang</span>
-                            </div>
-                        </div>
-                        <div class="awardContainer">
-                            <div class="awardTitle">
-                                <span id="awardTitle">Suma langit nawa</span>
-                                <iconify-icon icon="solar:pen-bold"></iconify-icon>
-                                <iconify-icon icon="tabler:trash-filled"></iconify-icon>
-                            </div>
-                            <div class="awardDetails">
-                                <span id="awardDate">2019</span>
-                                <span id="awardLocation">Dyan lang</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="honorsContainer" id="honorsContainer3">
-                        <div class="formTitle1">Certificates</div>
-                        <div class="formTitle2"><span>Highlight certificates that you have received</span>
-                            <iconify-icon icon="zondicons:add-solid"></iconify-icon>
-                        </div>
-                        <div class="awardContainer">
-                            <div class="awardTitle">
-                                <span id="awardTitle">Suma langit nawa</span>
-                                <iconify-icon icon="solar:pen-bold"></iconify-icon>
-                                <iconify-icon icon="tabler:trash-filled"></iconify-icon>
-                            </div>
-                            <div class="awardDetails">
-                                <span id="awardDate">2019</span>
-                                <span id="awardLocation">Dyan lang</span>
-                            </div>
-                        </div>
-                        <div class="awardContainer">
-                            <div class="awardTitle">
-                                <span id="awardTitle">Suma langit nawa</span>
-                                <iconify-icon icon="solar:pen-bold"></iconify-icon>
-                                <iconify-icon icon="tabler:trash-filled"></iconify-icon>
-                            </div>
-                            <div class="awardDetails">
-                                <span id="awardDate">2019</span>
-                                <span id="awardLocation">Dyan lang</span>
-                            </div>
-                        </div>
-                        <div class="awardContainer">
-                            <div class="awardTitle">
-                                <span id="awardTitle">Suma langit nawa</span>
-                                <iconify-icon icon="solar:pen-bold"></iconify-icon>
-                                <iconify-icon icon="tabler:trash-filled"></iconify-icon>
-                            </div>
-                            <div class="awardDetails">
-                                <span id="awardDate">2019</span>
-                                <span id="awardLocation">Dyan lang</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="buttonContainer">
-                        <button class="mainButton" type="button" onclick="Education()">Save</button>
                     </div>
                 </div>
                 <div class="formContent">asdaad</div>
             </div>
             <div class="profileView"></div>
         </div>
-        <div class="formsInput">
-            <form id="awardAddForm">
-                <div class="formTitle"><span>Award</span> <iconify-icon icon="ph:x-bold"></iconify-icon></div>
-                <div class="formTitle3">Add details of award that you have received</div>
+        <div class="formsInput1" id="formsInput1">
+            <form action="" id="awardAddForm">
+                <div class="formTitle"><span id="formTitle">Award</span> <iconify-icon icon="ph:x-bold"
+                        onclick="Closeform(awardAddForm,formsInput1)"></iconify-icon></div>
                 <div class="inputContainer2">
-                    <label for="">Award Category</label>
-                    <input type="text" class="inputBox" id="" name="" placeholder="" autocomplete="off"
+                    <label for="awardName">Name</label>
+                    <input type="text" class="inputBox" id="awardName" placeholder="" autocomplete="off"
                         spellcheck="false">
                     <div class="errorMessage"></div>
                 </div>
-                <div class="inputContainer2">
+                <!-- <div class="inputContainer2">
                     <label for="">School</label>
                     <input type="text" class="inputBox" id="" name="" placeholder="" autocomplete="off"
                         spellcheck="false">
                     <div class="errorMessage"></div>
-                </div>
+                </div> -->
                 <div class="inputContainer2">
-                    <label for="">Date Received</label>
-                    <input type="date" class="inputBox" id="" name="">
+                    <label for="awardDate">Date Received</label>
+                    <input type="date" class="inputBox" id="awardDate" name="awardDate">
                     <div class="errorMessage"></div>
+                </div>
+                <div class="buttonContainer">
+                    <button type="button" class="mainButton" id="addDetailsButton">Save</button>
+                </div>
+            </form>
+        </div>
+        <div class="formsInput" id="formsInput">
+            <form action="" id="educAddForm">
+                <div class="formTitle"><span>Award</span> <iconify-icon icon="ph:x-bold"
+                        onclick="Closeform(educAddForm,formsInput)"></iconify-icon></div>
+                <div class="educAddForm">
+                    <div class="educData">
+                        <div class="inputContainer2">
+                            <label for="">Institution Attended</label>
+                            <input type="text" class="inputBox" id="" name="" placeholder="Civil Status"
+                                autocomplete="off" spellcheck="false">
+                            <div class="errorMessage"></div>
+                        </div>
+                        <div class="inputContainer2">
+                            <label for="">Course</label>
+                            <input type="text" class="inputBox" id="" name="" placeholder="Civil Status"
+                                autocomplete="off" spellcheck="false">
+                            <div class="errorMessage"></div>
+                        </div>
+                        <div class="inputContainer2">
+                            <label for="">Major</label>
+                            <input type="text" class="inputBox" id="" name="" placeholder="Civil Status"
+                                autocomplete="off" spellcheck="false">
+                            <div class="errorMessage"></div>
+                        </div>
+                        <div class="inputContainer2">
+                            <label for="">Award</label>
+                            <input type="text" class="inputBox" id="" name="" placeholder="Civil Status"
+                                autocomplete="off" spellcheck="false">
+                            <div class="errorMessage"></div>
+                        </div>
+                        <div class="inputContainer2">
+                            <label for="">Year graduated</label>
+                            <input type="date" class="inputBox" id="" name="">
+                            <div class="errorMessage"></div>
+                        </div>
+                    </div>
+                    <div class="educData">
+                        <div class="formTitle">Accomplishments</div>
+                        <div class="honorsContainer" id="honorsContainer1">
+                            <div class="formTitle1">Honors</div>
+                            <div class="formTitle2"><span>Highlight academic recognition that you have received</span>
+                                <iconify-icon icon="zondicons:add-solid"
+                                    onclick="ShowForms1(awardAddForm,formsInput1, this)" form-key="1"></iconify-icon>
+                            </div>
+                        </div>
+                        <div class="honorsContainer" id="honorsContainer2">
+                            <div class="formTitle1">Awards</div>
+                            <div class="formTitle2"><span>Highlight awards that you have received</span>
+                                <iconify-icon icon="zondicons:add-solid"
+                                    onclick="ShowForms1(awardAddForm,formsInput1, this)" form-key="2"></iconify-icon>
+                            </div>
+                        </div>
+                        <div class="honorsContainer" id="honorsContainer3">
+                            <div class="formTitle1">Certificates</div>
+                            <div class="formTitle2"><span>Highlight certificates that you have received</span>
+                                <iconify-icon icon="zondicons:add-solid"
+                                    onclick="ShowForms1(awardAddForm,formsInput1, this)" form-key="3"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="buttonContainer">
                     <button type="button" class="mainButton">Submit</button>
@@ -374,6 +363,27 @@
             </form>
         </div>
     </div>
+
+
+    <!-- template -->
+    <!-- Award template -->
+    <template id="awardTemplate">
+        <div class="awardContainer">
+            <div class="awardTitle">
+                <span id="awardTitle"></span>
+                <iconify-icon icon="solar:pen-bold"></iconify-icon>
+                <iconify-icon icon="tabler:trash-filled"></iconify-icon>
+            </div>
+            <div class="awardDetails">
+                <span id="awardDate"></span>
+                <span id="awardLocation"></span>
+            </div>
+        </div>
+    </template>
+
+
+
+
 </body>
 
 </html>
