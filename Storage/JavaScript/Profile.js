@@ -340,50 +340,161 @@ function handleDragOver(event) {
 function ShowForms(form, formInput) {
   formInput.style.display = "flex";
   form.style.display = "flex";
+  const inputs = form.querySelectorAll("input");
+  inputs.forEach((input) => {
+    input.value = "";
+    RemoveError(input);
+  });
 }
 function ShowForms1(form, formInput, element) {
   var formKey = element.getAttribute("form-key");
+  let key = 0;
   var title = form.querySelector("#formTitle");
-  var honorsContainers = [
-    null,
-    document.querySelector("#honorsContainer1"),
-    document.querySelector("#honorsContainer2"),
-    document.querySelector("#honorsContainer3"),
-  ];
+  var honorsContainer1 = document.querySelector("#honorsContainer1");
+  var honorsContainer2 = document.querySelector("#honorsContainer2");
+  var honorsContainer3 = document.querySelector("#honorsContainer3");
   var awardTemplate = document.querySelector("#awardTemplate");
   var addDetailsButton = document.querySelector("#addDetailsButton");
 
   if (formKey == 1) {
     title.innerHTML = "Honor";
+    key = formKey;
   } else if (formKey == 2) {
     title.innerHTML = "Awards";
+    key = formKey;
   } else if (formKey == 3) {
     title.innerHTML = "Certificate";
+    key = formKey;
   }
-
   formInput.style.display = "flex";
   form.style.display = "flex";
 
-  addDetailsButton.addEventListener("click", () => {
-    var awardName = form.querySelector("#awardName").value.trim();
-    var awardDate = form.querySelector("#awardDate").value;
+  var awardName = form.querySelector("#awardName");
+  var awardDate = form.querySelector("#awardDate");
+  addDetailsButton.onclick = () => {
+    const newElement = awardTemplate.content.cloneNode(true);
+    const newTitle = newElement.querySelector("#awardTitle");
+    const newDate = newElement.querySelector("#awardDate");
+    const awardTitleHidden = newElement.querySelector("#awardTitleHidden");
+    const awardDateHidden = newElement.querySelector("#awardDateHidden");
+    const awardLocation = newElement.querySelector("#awardLocation");
+    const schoolAttended = document.querySelector("#schoolAttended");
+    awardNameValue = awardName.value;
+    awardDateValue = awardDate.value;
 
-    if (awardName && awardDate) {
-      let newElement = awardTemplate.content.cloneNode(true);
-      newElement.querySelector("#awardTitle").innerText = awardName;
-      newElement.querySelector("#awardDate").innerText = awardDate;
-      honorsContainers[formKey].appendChild(newElement);
-    } 
-  });
+    newTitle.innerText = awardNameValue;
+    newDate.innerText = awardDateValue;
+    awardLocation.innerText = schoolAttended.value.trim();
+    awardTitleHidden.value = awardNameValue;
+    awardDateHidden.value = awardDateValue;
+
+    if (key == 1) {
+      honorsContainer1.appendChild(newElement);
+      formInput.style.display = "none";
+      form.style.display = "none";
+      awardName.value = "";
+      awardDate.value = "";
+    }
+    if (key == 2) {
+      honorsContainer2.appendChild(newElement);
+      formInput.style.display = "none";
+      form.style.display = "none";
+      awardName.value = "";
+      awardDate.value = "";
+    }
+    if (key == 3) {
+      honorsContainer3.appendChild(newElement);
+      formInput.style.display = "none";
+      form.style.display = "none";
+      awardName.value = "";
+      awardDate.value = "";
+    }
+  };
 }
-
 function Closeform(form, formInput) {
   formInput.style.display = "none";
   form.style.display = "none";
+}
+
+function ValidateSchool(form) {
+  var inputs = form.querySelectorAll("input");
+  isValid = true;
+
+  inputs.forEach((input) => {
+    if (input.value == "") {
+      ShowError(input, "Field Required");
+      isValid = false;
+    } else {
+      RemoveError(input);
+    }
+  });
+
+  if (isValid) {
+    Swal.fire({
+      title: "Save Information",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Confirm",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          text: "Information saved!",
+          icon: "success",
+          showConfirmButton: false,
+        }).then(() => {
+          form.submit();
+        });
+      }
+    });
+  }
+}
+
+function ValidateDate(input) {
+  var selectedDate = new Date(input.value);
+  var currentDate = new Date();
+
+  if (selectedDate > currentDate) {
+    input.value = "";
+    ShowError(input, "Please select a date in the past or today");
+  } else {
+    RemoveError(input);
+  }
+}
+
+function DeleteAward(element) {
+  var awardContainer = element.closest(".awardContainer");
+  awardContainer.parentNode.removeChild(awardContainer);
+}
+function DeleteEducation() {
+  Swal.fire({
+    title: "Delete ?",
+    text: "You won't be able to revert this",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "Confirm",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        text: "Deleted",
+        icon: "success",
+        showConfirmButton: false,
+      }).then(() => {
+        profileForm.submit();
+      });
+    }
+  });
 }
 const inputs = document.querySelectorAll("input[type='text']");
 inputs.forEach((input) => {
   input.addEventListener("input", () => {
     RemoveError(input);
+  });
+});
+var schoolAttended = document.querySelector("#schoolAttended");
+
+schoolAttended.addEventListener("input", () => {
+  const awardLocation = document.querySelectorAll(".awardLocation");
+  awardLocation.forEach((award) => {
+    award.innerText = schoolAttended.value;
   });
 });

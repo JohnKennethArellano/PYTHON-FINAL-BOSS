@@ -240,7 +240,7 @@
                         <button class="mainButton" type="button"
                             onclick="ShowForms(educAddForm, formsInput)">Add</button>
                     </div>
-                    <div class="educationalAttainmentContainer">
+                    <!-- <div class="educationalAttainmentContainer">
                         <div class="educationContainer">
                             <div class="educationTitle">
                                 <span id="schoolEd">Bulacan State University</span>
@@ -259,12 +259,13 @@
                                     Edit
                                 </button>
                                 <button>
-                                    <iconify-icon icon="tabler:trash-filled"></iconify-icon>
+                                    <iconify-icon icon="tabler:trash-filled" onclick="DeleteEducation()"></iconify-icon>
                                     Delete
                                 </button>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
+
                 </div>
                 <div class="formContent">asdaad</div>
             </div>
@@ -288,7 +289,7 @@
                 </div> -->
                 <div class="inputContainer2">
                     <label for="awardDate">Date Received</label>
-                    <input type="date" class="inputBox" id="awardDate" name="awardDate">
+                    <input type="date" class="inputBox" id="awardDate" name="awardDate" onchange="ValidateDate(this)">
                     <div class="errorMessage"></div>
                 </div>
                 <div class="buttonContainer">
@@ -298,37 +299,38 @@
         </div>
         <div class="formsInput" id="formsInput">
             <form action="" id="educAddForm">
-                <div class="formTitle"><span>Award</span> <iconify-icon icon="ph:x-bold"
+                <div class="formTitle"><span>Educational Attainment</span> <iconify-icon icon="ph:x-bold"
                         onclick="Closeform(educAddForm,formsInput)"></iconify-icon></div>
                 <div class="educAddForm">
                     <div class="educData">
                         <div class="inputContainer2">
-                            <label for="">Institution Attended</label>
-                            <input type="text" class="inputBox" id="" name="" placeholder="Civil Status"
+                            <label for="schoolAttended">Institution Attended</label>
+                            <input type="text" class="inputBox" id="schoolAttended" name="schoolAttended"
+                                placeholder="Civil Status" autocomplete="off" spellcheck="false">
+                            <div class="errorMessage"></div>
+                        </div>
+                        <div class="inputContainer2">
+                            <label for="course">Course</label>
+                            <input type="text" class="inputBox" id="course" name="course" placeholder="Civil Status"
                                 autocomplete="off" spellcheck="false">
                             <div class="errorMessage"></div>
                         </div>
                         <div class="inputContainer2">
-                            <label for="">Course</label>
-                            <input type="text" class="inputBox" id="" name="" placeholder="Civil Status"
+                            <label for="major">Major</label>
+                            <input type="text" class="inputBox" id="major" name="major" placeholder="Civil Status"
                                 autocomplete="off" spellcheck="false">
                             <div class="errorMessage"></div>
                         </div>
                         <div class="inputContainer2">
-                            <label for="">Major</label>
-                            <input type="text" class="inputBox" id="" name="" placeholder="Civil Status"
+                            <label for="award">Award</label>
+                            <input type="text" class="inputBox" id="award" name="award" placeholder="Civil Status"
                                 autocomplete="off" spellcheck="false">
                             <div class="errorMessage"></div>
                         </div>
                         <div class="inputContainer2">
-                            <label for="">Award</label>
-                            <input type="text" class="inputBox" id="" name="" placeholder="Civil Status"
-                                autocomplete="off" spellcheck="false">
-                            <div class="errorMessage"></div>
-                        </div>
-                        <div class="inputContainer2">
-                            <label for="">Year graduated</label>
-                            <input type="date" class="inputBox" id="" name="">
+                            <label for="graduated">Year graduated</label>
+                            <input type="date" class="inputBox" id="graduated" name="graduated"
+                                onchange="ValidateDate(this)">
                             <div class="errorMessage"></div>
                         </div>
                     </div>
@@ -358,7 +360,7 @@
                     </div>
                 </div>
                 <div class="buttonContainer">
-                    <button type="button" class="mainButton">Submit</button>
+                    <button type="button" class="mainButton" onclick="ValidateSchool(educAddForm)">Submit</button>
                 </div>
             </form>
         </div>
@@ -370,18 +372,47 @@
     <template id="awardTemplate">
         <div class="awardContainer">
             <div class="awardTitle">
-                <span id="awardTitle"></span>
-                <iconify-icon icon="solar:pen-bold"></iconify-icon>
-                <iconify-icon icon="tabler:trash-filled"></iconify-icon>
+                <span id="awardTitle">3</span>
+                <!-- <iconify-icon icon="solar:pen-bold"></iconify-icon> -->
+                <iconify-icon icon="tabler:trash-filled" onclick="DeleteAward(this)"></iconify-icon>
             </div>
             <div class="awardDetails">
-                <span id="awardDate"></span>
-                <span id="awardLocation"></span>
+                <span id="awardDate">123</span>
+                <span id="awardLocation" class="awardLocation">dasd</span>
             </div>
+            <input type="hidden" name="awardTitle[]" id="awardTitleHidden">
+            <input type="hidden" name="awardDate[]" id="awardDateHidden">
         </div>
     </template>
 
-
+    <!-- Educational attainment -->
+    <template id="educationalAttainmentContainer">
+        <div class="educationalAttainmentContainer">
+            <div class="educationContainer">
+                <div class="educationTitle">
+                    <span id="schoolEd">Bulacan State University</span>
+                    <span id="awardEd">Magna Cum Laude</span>
+                </div>
+                <div class="educationTitle">
+                    <div class="courseEd">
+                        <span id="courseEd">Bachelor of Science in Information and Technology</span>
+                        <span id="majorEd">Major in Web and Mobile Development</span>
+                    </div>
+                    <span id="dateEd">Class of 2023</span>
+                </div>
+                <div class="educOptions">
+                    <button>
+                        <iconify-icon icon="solar:pen-bold"></iconify-icon>
+                        Edit
+                    </button>
+                    <button>
+                        <iconify-icon icon="tabler:trash-filled" onclick="DeleteEducation(this)"></iconify-icon>
+                        Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </template>
 
 
 </body>
