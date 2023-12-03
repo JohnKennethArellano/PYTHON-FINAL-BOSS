@@ -1,0 +1,175 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --orangeMain: #E57B1E;
+    --orangeSecond: #FEC887;
+    --black: #212121;
+    --white: #fff;
+    --lightgray: #979797;
+    --red: #EF5350;
+    --lightred: #EF9A9A;
+    --medium: 1vw;
+    --larger: 1.3vw;
+    --small: .8vw;
+}
+
+body {
+    font-family: 'Lexend', sans-serif;
+}
+
+.mainContainer {
+    overflow-y: scroll;
+    padding-top: 1vh;
+}
+
+.mainContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.firstLogin {
+    display: none;
+}
+
+.firstLogin.show {
+    width: 95%;
+    height: fit-content;
+    padding: 0 1vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.formTitle {
+    width: 100%;
+    height: fit-content;
+    font-size: 2vw;
+    font-weight: 600;
+    color: var(--orangeMain);
+    margin-bottom: .5vw;
+    padding-left: 8vw;
+}
+
+.formTitle span {
+    color: var(--black);
+}
+
+.formHolder {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+
+.formHolder form {
+    width: 80%;
+    height: fit-content;
+    background-color: var(--white);
+    padding: 1vw;
+    border-radius: .4vw;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.43);
+}
+
+.formTitle1 {
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    font-size: 2vw;
+    color: var(--orangeMain);
+    margin: .5vw 0;
+    font-weight: 600;
+}
+
+.formGroup {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    gap: 1vw;
+    display: flex;
+    margin-bottom: 1vw;
+}
+
+.formGroup1 {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    gap: 1vw;
+    display: flex;
+    margin-bottom: 1vw;
+}
+
+.formInput {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup .formInput {
+    width: calc(100%/2);
+}
+
+.formGroup1 .formInput {
+    width: calc(100%/3);
+}
+
+.formLabel {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 1vh;
+    color: var(--orangeMain);
+    font-size: var(--medium);
+    font-weight: 600;
+    transition: all ease .3s;
+}
+
+.inputBox {
+    width: 100%;
+    height: 5vh;
+    border: solid 1px var(--lightgray);
+    color: var(--black);
+    outline: none;
+    border-radius: .3vw;
+    padding: 0 1vw;
+    font-size: var(--medium);
+}
+
+.buttonContainer {
+    width: 100%;
+    padding: .5vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.mainButton {
+    width: fit-content;
+    height: fit-content;
+    padding: .3vw 2vw;
+    border: solid 1px var(--orangeMain);
+    outline: none;
+    border-radius: .4vw;
+    color: var(--white);
+    background-color: var(--orangeMain);
+    font-size: var(--medium);
+    transition: all ease .3s;
+    cursor: pointer;
+}
+
+.mainButton:hover {
+    color: var(--orangeMain);
+    background-color: var(--white);
+}
+
+.errorMessage {
+    width: 100%;
+    height: 3vh;
+    display: flex;
+    align-items: center;
+    color: var(--red);
+    font-size: var(--small);
+    padding-left: 1vh;
+}
