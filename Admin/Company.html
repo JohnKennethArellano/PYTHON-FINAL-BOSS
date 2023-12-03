@@ -136,7 +136,7 @@
             </nav>
         </div>
         <div class="mainContainer">
-            <div class="firstLogin show">
+            <div class="firstLogin">
                 <!-- Add classlist show para sa first login ng employer -->
                 <div class="formTitle">
                     <span>Add</span> Company
@@ -460,8 +460,43 @@
                     </form>
                 </div>
             </div>
+            <div class="companyContainer show">
+                <div class="formTitle2">All Companies</div>
+                <div class="companyHolder">
+                    <div class="companyHolderContainer" data-value="1" onclick="alert(this.getAttribute('data-value'))">
+                        <span>Kangkong Chips INC.</span>
+                        <span>Food Industry</span>
+                        <span>Palengke</span>
+                    </div>
+                    <div class="companyHolderContainer" data-value="1" onclick="alert(this.getAttribute('data-value'))">
+                        <span>Kangkong Chips INC.</span>
+                        <span>Food Industry</span>
+                        <span>Palengke</span>
+                    </div>
+                    <div class="companyHolderContainer" data-value="1" onclick="alert(this.getAttribute('data-value'))">
+                        <span>Kangkong Chips INC.</span>
+                        <span>Food Industry</span>
+                        <span>Palengke</span>
+                    </div>
+                    <div class="companyHolderContainer" data-value="1" onclick="alert(this.getAttribute('data-value'))">
+                        <span>Kangkong Chips INC.</span>
+                        <span>Food Industry</span>
+                        <span>Palengke</span>
+                    </div>
+                </div>
+            </div>
+            <div class="companyDetails show">
+
+            </div>
         </div>
     </div>
+    <template id="companyTemplate">
+        <div class="companyHolderContainer" data-value="1" onclick="ViewDetails(this.getAttribute('data-value'))">
+            <span>Kangkong Chips INC.</span>
+            <span>Food Industry</span>
+            <span>Palengke</span>
+        </div>
+    </template>
 </body>
 
 

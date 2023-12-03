@@ -173,3 +173,99 @@ body {
     font-size: var(--small);
     padding-left: 1vh;
 }
+
+.companyContainer {
+    display: none;
+}
+
+.companyContainer.show {
+    margin-top: 1vw;
+    width: 96%;
+    height: 82vh;
+    overflow-y: scroll;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.companyContainer.show::-webkit-scrollbar {
+    display: none;
+}
+
+.formTitle2 {
+    width: 100%;
+    height: fit-content;
+    font-size: 2vw;
+    font-weight: 600;
+    color: var(--orangeMain);
+}
+
+.companyHolder {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vh;
+}
+
+.companyHolderContainer {
+    position: relative;
+    margin-top: 1vw;
+    width: calc(100%/4 - 1vh);
+    height: 10vw;
+    border-radius: .4vw;
+    padding: 1vw;
+    background-color: #fec8878c;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px #fec8878c;
+    cursor: pointer;
+    transition: all ease .3s;
+    overflow: hidden;
+}
+
+.companyHolderContainer::before {
+    content: "VIEW";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orangeMain);
+    font-weight: bold;
+    z-index: 10;
+    background-color: #ffffff;
+    transform: translateY(100%);
+    transition: all ease 0.2s;
+    opacity: 0;
+}
+
+.companyHolderContainer:hover::before {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all ease .2s;
+}
+
+
+.companyHolderContainer span {
+    width: 100%;
+    color: var(--black);
+}
+
+.companyHolderContainer span:nth-child(1) {
+    font-size: var(--larger);
+}
+
+.companyHolderContainer span:nth-child(2) {
+    font-size: var(--medium);
+}
+
+.companyHolderContainer span:nth-child(3) {
+    position: absolute;
+    bottom: 1vh;
+    font-size: var(--small);
+}
