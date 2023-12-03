@@ -293,7 +293,7 @@
                     <div class="errorMessage"></div>
                 </div>
                 <div class="buttonContainer">
-                    <button type="button" class="mainButton" id="addDetailsButton">Save</button>
+                    <button type="button" class="mainBudtton" id="addDetailsButton">Save</button>
                 </div>
             </form>
         </div>
@@ -305,8 +305,11 @@
                     <div class="educData">
                         <div class="inputContainer2">
                             <label for="schoolAttended">Institution Attended</label>
-                            <input type="text" class="inputBox" id="schoolAttended" name="schoolAttended"
+                            <input list="schoolAttendeds" class="inputBox" id="schoolAttended" name="schoolAttended"
                                 placeholder="Civil Status" autocomplete="off" spellcheck="false">
+                            <datalist id="schoolAttendeds">
+                                <option value="Dyan lang"></option>
+                            </datalist>
                             <div class="errorMessage"></div>
                         </div>
                         <div class="inputContainer2">

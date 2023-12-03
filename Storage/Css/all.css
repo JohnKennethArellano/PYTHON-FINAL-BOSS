@@ -38,7 +38,7 @@ body {
     height: 100vh;
     display: grid;
     grid-template-rows: 12vh 90vh;
-    grid-template-columns: 20vw 3fr;
+    grid-template-columns: 18vw 3fr;
     grid-template-areas:
         'sidebar header'
         'sidebar mainContainer';
@@ -339,7 +339,6 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
-
 
 
 
