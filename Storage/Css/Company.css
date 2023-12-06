@@ -148,7 +148,7 @@ body {
 .mainButton {
     width: fit-content;
     height: fit-content;
-    padding: .3vw 2vw;
+    padding: .4vw 2vw;
     border: solid 1px var(--orangeMain);
     outline: none;
     border-radius: .4vw;
@@ -198,6 +198,16 @@ body {
     font-size: 2vw;
     font-weight: 600;
     color: var(--orangeMain);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.formTitle2>span {
+    font-size: var(--larger);
+    font-weight: 100;
+    margin-right: 1vw;
+    cursor: pointer;
 }
 
 .companyHolder {
@@ -268,4 +278,97 @@ body {
     position: absolute;
     bottom: 1vh;
     font-size: var(--small);
+}
+
+.forms {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    backdrop-filter: blur(2px);
+    display: none;
+    transition: all ease .3s;
+}
+
+.forms>.formHolder {
+    width: 60vw;
+}
+
+.companyDetails {
+    display: none;
+    transition: all ease .3s;
+}
+
+.companyDetails.show {
+    margin-top: 1vw;
+    width: 96%;
+    height: 82vh;
+    overflow-y: scroll;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.43);
+    border-radius: .3vw;
+    transition: all ease .3s;
+}
+
+.companyDetails.show::-webkit-scrollbar {
+    display: none;
+}
+
+.companyDetailsHeader {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+.formTitles {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5vw 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1vw;
+    color: var(--lightgray);
+    font-size: var(--small);
+    transition: all linear 0.1s;
+    cursor: pointer;
+}
+
+.formTitles.active,
+.formTitles:hover {
+    color: var(--black);
+    font-size: var(--medium);
+}
+
+.formTitles:hover::before {
+    width: 60%;
+}
+
+.formTitles::before {
+    position: absolute;
+    bottom: .5vh;
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: var(--orangeMain);
+    transition: width ease 0.2s;
+}
+
+.formTitles.active::before {
+    width: 60%;
+}
+
+.backButton {
+    position: absolute;
+    right: 1vw;
+    cursor: pointer;
 }

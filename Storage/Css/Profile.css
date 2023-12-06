@@ -302,6 +302,7 @@ form {
 
 .inputGroup1 .inputContainer:nth-child(2) {
     flex-grow: 1;
+    
 }
 
 .inputGroup2 {
