@@ -319,7 +319,7 @@ body {
 .sideBar nav ul li a iconify-icon, .sideBar nav ul li a i {
     position: absolute;
     left: 1.8vw;
-    font-size: 4vh;
+    font-size: 1.7vw;
     color: var(--orangeMain);
 }
 

@@ -116,8 +116,64 @@ function Validate1(form) {
     });
   }
 }
+function Validate2(form) {
+  const inputs = form.querySelectorAll("input[type='text']");
+  const selects = form.querySelectorAll("select");
+  const provinceInput = form.querySelector("#provinceInputEdit"),
+    cityInput = form.querySelector("#cityInputEdit"),
+    barangayInput = form.querySelector("#barangayInputEdit"),
+    province = form.querySelector("#provinceEdit"),
+    city = form.querySelector("#cityEdit"),
+    barangay = form.querySelector("#barangayEdit");
+  isValid = true;
+
+  var locationInput = [provinceInput, cityInput, barangayInput];
+  var location = [province, city, barangay];
+  locationInput.forEach((input, selectedIndex) => {
+    if (input.value === "") {
+      isValid = false;
+      ShowError(location[selectedIndex], "Field required");
+    } else {
+      RemoveError(location[selectedIndex]);
+    }
+  });
+  inputs.forEach((input) => {
+    if (input.value == "") {
+      isValid = false;
+      ShowError(input, "Field required");
+    } else {
+      RemoveError(input);
+    }
+  });
+  selects.forEach((select) => {
+    if (select.value == "") {
+      isValid = false;
+      ShowError(select, "Field required");
+    } else {
+      RemoveError(select);
+    }
+  });
+  if (isValid) {
+    Swal.fire({
+      title: "Add Company?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Confirm",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          text: "Company Added",
+          icon: "success",
+          showConfirmButton: false,
+        }).then(() => {
+          form.submit();
+        });
+      }
+    });
+  }
+}
 function ShowError(input, message) {
-  let parent = input.parentNode;
+  let parent = input.parentElement;
   let errorMessage = parent.querySelector(".errorMessage");
 
   input.style.borderColor = "var(--red)";
@@ -174,19 +230,19 @@ inputs.forEach((input) => {
 });
 
 const formTitles = document.querySelectorAll(".formTitles"),
-formContent = document.querySelectorAll(".companyDetailsSection");
+  formContent = document.querySelectorAll(".companyDetailsSection");
 
 formTitles.forEach((forms, index) => {
-forms.addEventListener("click", () => {
-  formContent.forEach((content) => {
-    content.classList.remove("active");
-  });
+  forms.addEventListener("click", () => {
+    formContent.forEach((content) => {
+      content.classList.remove("active");
+    });
 
-  formTitles.forEach((content) => {
-    content.classList.remove("active");
-  });
+    formTitles.forEach((content) => {
+      content.classList.remove("active");
+    });
 
-  formTitles[index].classList.add("active");
-  formContent[index].classList.add("active");
-});
+    formTitles[index].classList.add("active");
+    formContent[index].classList.add("active");
+  });
 });

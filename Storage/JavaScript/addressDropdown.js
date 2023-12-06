@@ -16,17 +16,40 @@ var my_handlers = {
 
   fillProvincesAdmin: function () {
     var regionCode = $(this).val();
-    $("#provinceAdmin").ph_locations("fetch_list", [{ region_code: regionCode }]);
+    $("#provinceAdmin").ph_locations("fetch_list", [
+      { region_code: regionCode },
+    ]);
   },
 
   fillCitiesAdmin: function () {
     var provinceCode = $(this).val();
-    $("#cityAdmin").ph_locations("fetch_list", [{ province_code: provinceCode }]);
+    $("#cityAdmin").ph_locations("fetch_list", [
+      { province_code: provinceCode },
+    ]);
   },
 
   fillBarangaysAdmin: function () {
     var cityCode = $(this).val();
     $("#barangayAdmin").ph_locations("fetch_list", [{ city_code: cityCode }]);
+  },
+
+  fillProvincesEdit: function () {
+    var regionCode = $(this).val();
+    $("#provinceEdit").ph_locations("fetch_list", [
+      { region_code: regionCode },
+    ]);
+  },
+
+  fillCitiesEdit: function () {
+    var provinceCode = $(this).val();
+    $("#cityEdit").ph_locations("fetch_list", [
+      { province_code: provinceCode },
+    ]);
+  },
+
+  fillBarangaysEdit: function () {
+    var cityCode = $(this).val();
+    $("#barangayEdit").ph_locations("fetch_list", [{ city_code: cityCode }]);
   },
 };
 
@@ -52,4 +75,15 @@ $(function () {
   $("#barangayAdmin").ph_locations({ location_type: "barangays" });
 
   $("#provinceAdmin").ph_locations("fetch_list");
+
+  $("#regionEdit").on("change", my_handlers.fillProvincesEdit);
+  $("#provinceEdit").on("change", my_handlers.fillCitiesEdit);
+  $("#cityEdit").on("change", my_handlers.fillBarangaysEdit);
+
+  $("#regionEdit").ph_locations({ location_type: "regions" });
+  $("#provinceEdit").ph_locations({ location_type: "provinces" });
+  $("#cityEdit").ph_locations({ location_type: "cities" });
+  $("#barangayEdit").ph_locations({ location_type: "barangays" });
+
+  $("#provinceEdit").ph_locations("fetch_list");
 });
