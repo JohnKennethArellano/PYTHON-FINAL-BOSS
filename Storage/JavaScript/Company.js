@@ -60,6 +60,62 @@ function Validate(form) {
     });
   }
 }
+function Validate1(form) {
+  const inputs = form.querySelectorAll("input[type='text']");
+  const selects = form.querySelectorAll("select");
+  const provinceInput = form.querySelector("#provinceInput"),
+    cityInput = form.querySelector("#cityInput"),
+    barangayInput = form.querySelector("#barangayInput"),
+    province = form.querySelector("#provinceAdmin"),
+    city = form.querySelector("#cityAdmin"),
+    barangay = form.querySelector("#barangayAdmin");
+  isValid = true;
+
+  var locationInput = [provinceInput, cityInput, barangayInput];
+  var location = [province, city, barangay];
+  locationInput.forEach((input, selectedIndex) => {
+    if (input.value === "") {
+      isValid = false;
+      ShowError(location[selectedIndex], "Field required");
+    } else {
+      RemoveError(location[selectedIndex]);
+    }
+  });
+  inputs.forEach((input) => {
+    if (input.value == "") {
+      isValid = false;
+      ShowError(input, "Field required");
+    } else {
+      RemoveError(input);
+    }
+  });
+  selects.forEach((select) => {
+    if (select.value == "") {
+      isValid = false;
+      ShowError(select, "Field required");
+    } else {
+      RemoveError(select);
+    }
+  });
+  if (isValid) {
+    Swal.fire({
+      title: "Add Company?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Confirm",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          text: "Company Added",
+          icon: "success",
+          showConfirmButton: false,
+        }).then(() => {
+          form.submit();
+        });
+      }
+    });
+  }
+}
 function ShowError(input, message) {
   let parent = input.parentNode;
   let errorMessage = parent.querySelector(".errorMessage");
@@ -74,6 +130,36 @@ function RemoveError(input) {
   input.style.borderColor = "";
   errorMessage.innerText = "";
 }
+
+function CloseForm(element) {
+  element.style.display = "none";
+}
+function ShowForm(element) {
+  element.style.display = "flex";
+  const inputs = element.querySelectorAll("input");
+  inputs.forEach((input) => {
+    input.value = "";
+    RemoveError(input);
+  });
+  const selects = element.querySelectorAll("select");
+  selects.forEach((input) => {
+    RemoveError(input);
+  });
+}
+
+function BackButton() {
+  const companyContainer = document.querySelector("#companyContainer"),
+    companyDetails = document.querySelector("#companyDetails");
+  companyDetails.classList.remove("show");
+  companyContainer.classList.add("show");
+}
+
+function ViewDetails(id) {
+  const companyContainer = document.querySelector("#companyContainer"),
+    companyDetails = document.querySelector("#companyDetails");
+  companyContainer.classList.remove("show");
+  companyDetails.classList.add("show");
+}
 const selects = form.querySelectorAll("select");
 selects.forEach((select) => {
   select.addEventListener("change", function () {
@@ -85,4 +171,22 @@ inputs.forEach((input) => {
   input.addEventListener("input", function () {
     RemoveError(input);
   });
+});
+
+const formTitles = document.querySelectorAll(".formTitles"),
+formContent = document.querySelectorAll(".companyDetailsSection");
+
+formTitles.forEach((forms, index) => {
+forms.addEventListener("click", () => {
+  formContent.forEach((content) => {
+    content.classList.remove("active");
+  });
+
+  formTitles.forEach((content) => {
+    content.classList.remove("active");
+  });
+
+  formTitles[index].classList.add("active");
+  formContent[index].classList.add("active");
+});
 });
