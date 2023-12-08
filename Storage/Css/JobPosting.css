@@ -302,3 +302,113 @@ body {
     align-items: center;
     justify-content: flex-end;
 }
+
+.postHolder {
+    width: 100%;
+    height: fit-content;
+    background-color: #fec8878c;
+    padding: 1vw;
+    border-radius: .4vw;
+    border-color: #fec8878c;
+}
+
+.postTitle {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1vh;
+}
+
+.postTitle span {
+    font-size: 1.2vw;
+    color: var(--black);
+    font-weight: 600;
+}
+
+.postTitle iconify-icon {
+    cursor: pointer;
+    transition: all ease .3s;
+}
+
+.postTitle iconify-icon:hover {
+    color: var(--lightgray);
+}
+
+.options {
+    display: none;
+}
+
+.options.show {
+    position: absolute;
+    right: 1.5vw;
+    top: .5vw;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    padding: .2vw;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.43);
+    border-radius: .2vw;
+    z-index: 2;
+}
+
+.options span {
+    width: 100%;
+    height: fit-content;
+    padding: .3vw .5vw;
+    font-size: var(--medium);
+    font-weight: 100;
+    cursor: pointer;
+    border-radius: .15vw;
+    transition: all ease .3s;
+    background-color: var(--white);
+}
+
+.options span:first-child {
+    margin-bottom: .2vw;
+}
+
+.options span:hover {
+    background-color: #fec8878c;
+}
+
+.groupt {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    gap: 1vh;
+}
+
+.group {
+    width: 40%;
+}
+
+.group:last-child {
+    flex-grow: 1;
+}
+
+.groupInfo {
+    display: flex;
+    gap: 1vh;
+}
+
+.groupTitle {
+    width: fit-content;
+    height: fit-content;
+    font-size: var(--medium);
+    font-weight: 600;
+    color: var(--black);
+    margin-right: 1vw;
+}
+
+.groupContent {
+    width: fit-content;
+    height: fit-content;
+    font-size: var(--medium);
+    font-weight: 100;
+    display: flex;
+    color: var(--black);
+}

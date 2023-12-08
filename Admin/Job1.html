@@ -150,7 +150,64 @@
                     </div>
                 </div>
                 <div class="postContainer">
-                    
+                    <div class="postHolder" data-value=1>
+                        <div class="postTitle" id="postTitle">
+                            <span>Software Devs</span>
+                            <iconify-icon icon="tabler:dots"
+                                onclick="ShowOptions(this.closest('.postTitle').querySelector('#options'),this)"></iconify-icon>
+                            <div class="options" id="options">
+                                <span onclick="ShowApplicants(this.closest('.postHolder'),this)">View
+                                    Applicants</span>
+                                <span>Mark as Closed</span>
+                            </div>
+                        </div>
+                        <div class="groupt">
+                            <div class="group">
+                                <div class="groupInfo">
+                                    <span class="groupTitle">
+                                        Date Posted:
+                                    </span>
+                                    <span class="groupContent">
+
+                                    </span>
+                                </div>
+                                <div class="groupInfo">
+                                    <span class="groupTitle">
+                                        Category:
+                                    </span>
+                                    <span class="groupContent">
+
+                                    </span>
+                                </div>
+                                <div class="groupInfo">
+                                    <span class="groupTitle">
+                                        Skill Needed:
+                                    </span>
+                                    <span class="groupContent">
+
+                                    </span>
+                                </div>
+                                <div class="groupInfo">
+                                    <span class="groupTitle">
+                                        Scope & Timeline:
+                                    </span>
+                                    <span class="groupContent">
+
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="group">
+                                <div class="groupInfo">
+                                    <span class="groupTitle">
+                                        Description:
+                                    </span>
+                                    <span class="groupContent">
+
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -262,6 +319,67 @@
         <div class="skills">
             <span id="skill">asdad</span>
             <iconify-icon icon="uil:plus" onclick="addSkill(this)"></iconify-icon>
+        </div>
+    </template>
+
+    <template id="postTemplate">
+        <div class="postHolder" data-value=1>
+            <div class="postTitle" id="postTitle">
+                <span>Software Devs</span>
+                <iconify-icon icon="tabler:dots"
+                    onclick="ShowOptions(this.closest('.postTitle').querySelector('#options'),this)"></iconify-icon>
+                <div class="options" id="options">
+                    <span onclick="ShowApplicants(this.closest('.postHolder'),this)">View
+                        Applicants</span>
+                    <span>Mark as Closed</span>
+                </div>
+            </div>
+            <div class="groupt">
+                <div class="group">
+                    <div class="groupInfo">
+                        <span class="groupTitle">
+                            Date Posted:
+                        </span>
+                        <span class="groupContent">
+
+                        </span>
+                    </div>
+                    <div class="groupInfo">
+                        <span class="groupTitle">
+                            Category:
+                        </span>
+                        <span class="groupContent">
+
+                        </span>
+                    </div>
+                    <div class="groupInfo">
+                        <span class="groupTitle">
+                            Skill Needed:
+                        </span>
+                        <span class="groupContent">
+
+                        </span>
+                    </div>
+                    <div class="groupInfo">
+                        <span class="groupTitle">
+                            Scope & Timeline:
+                        </span>
+                        <span class="groupContent">
+
+                        </span>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="groupInfo">
+                        <span class="groupTitle">
+                            Description:
+                        </span>
+                        <span class="groupContent">
+
+                        </span>
+                    </div>
+                </div>
+            </div>
         </div>
     </template>
 </body>

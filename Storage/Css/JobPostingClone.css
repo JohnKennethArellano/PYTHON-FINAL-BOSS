@@ -1,0 +1,46 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --orangeMain: #E57B1E;
+    --orangeSecond: #FEC887;
+    --black: #212121;
+    --white: #fff;
+    --lightgray: #979797;
+    --red: #EF5350;
+    --lightred: #EF9A9A;
+    --medium: 1vw;
+    --larger: 1.3vw;
+    --small: .8vw;
+}
+
+body {
+    font-family: 'Lexend', sans-serif;
+
+}
+
+.mainContainer {
+    overflow-y: scroll;
+    padding-top: 1vh;
+}
+
+.mainContainer::-webkit-scrollbar {
+    display: none;
+
+}
+
+.main {
+    width: 100%;
+    height: fit-content;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+}
+
+table {
+    width: 100%;
+    height: fit-content;
+}

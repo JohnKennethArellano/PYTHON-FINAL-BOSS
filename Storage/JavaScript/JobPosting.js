@@ -188,3 +188,28 @@ textarea.forEach((element) => {
     RemoveError(element);
   });
 });
+
+function ShowOptions(options, button) {
+  var allOptions = document.querySelectorAll(".options");
+  allOptions.forEach(function (modal) {
+    if (modal !== options) {
+      modal.classList.remove("show");
+      var buttonInClosedModal = modal
+        .closest(".postTitle")
+        .querySelector("iconify-icon");
+      buttonInClosedModal.setAttribute("icon", "tabler:dots");
+    }
+  });
+
+  options.classList.toggle("show");
+  if (options.classList.contains("show")) {
+    button.setAttribute("icon", "octicon:x-12");
+  } else {
+    button.setAttribute("icon", "tabler:dots");
+  }
+}
+
+function ShowApplicants(a) {
+  id = a.getAttribute("data-value");
+  window.location.href = "/Admin/Job1Clone.html";
+}
