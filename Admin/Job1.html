@@ -4,15 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/Storage/JavaScript/all.js" defer></script>
+    <script src="/Storage/JavaScript/JobPosting.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/275edc9f9d.js" crossorigin="anonymous" defer></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link rel="stylesheet" href="/Storage/Css/bootstrap.css">
     <link rel="stylesheet" href="/Storage/Css/all.css">
+    <link rel="stylesheet" href="/Storage/Css/JobPosting.css">
     <link rel="website icon" type="png " href="/Storage/Images/logo.png">
-    <title>Dashboard User</title>
+    <title>Profile Emp</title>
 </head>
 
 <body>
@@ -23,7 +25,8 @@
                 <div class="input-group">
                     <input type="text" class="form-control custom-focus-style" placeholder="Search"
                         aria-label="Username" aria-describedby="basic-addon1">
-                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <span class="input-group-text " id="basic-addon1"><i
+                            class="fa-solid fa-magnifying-glass"></i></span>
                 </div>
             </div>
             <div class="rightNavbar w-auto h-100 d-flex align-items-center">
@@ -129,8 +132,138 @@
                 </ul>
             </nav>
         </div>
-        <div class="mainContainer"></div>
+        <div class="mainContainer">
+            <div class="main">
+                <div class="title">Job Posts</div>
+                <div class="title1">
+                    <select name="" id="selectCompany">
+                        <option selected disabled value="">Select Company</option>
+                        <option value="Dyan lang">Dyan lang</option>
+                        <option value="Dto lang makikita">Dto lang makikita</option>
+                        <option value="Kahit Saan">All</option>
+                        <option value="Hanap mo na lang">Hanap mo na lang </option>
+                    </select>
+                    <div class="searchbar">
+                        <input type="text" placeholder="Search..">
+                        <button class="mainButton" type="button"
+                            onclick="ShowForm(document.getElementById('formContainer'))">Post</button>
+                    </div>
+                </div>
+                <div class="postContainer">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="formContainer" id="formContainer">
+            <form action="" id="postForm">
+                <div class="formTitle">Add Job Post for&nbsp; <span id="comp"></span> <span id="closeButton"
+                        onclick="CloseForm(document.getElementById('formContainer'))">x</span>
+                </div>
+                <div class="formGroup1">
+                    <div class="formGroup2">
+                        <div class="formGroup">
+                            <label for="jobTitle" class="formLabel">Job Title</label>
+                            <input type="text" name="jobTitle" id="jobTitle"
+                                placeholder="ex. Product Manager for Cutting-Edge Tech Solutions" class="inputBox">
+                            <span class="errorMessage"></span>
+                        </div>
+                        <div class="formGroup">
+                            <label for="projectOverview" class="formLabel">Project Overview</label>
+                            <select name="projectOverview" id="projectOverview" class="inputBox">
+                                <option value="" selected disabled>Select Project Overview</option>
+                                <option value="Full Time">Full Time</option>
+                                <optgroup label="Part Time">
+                                    <option value="Flexible Hours">Flexible Hours</option>
+                                    <option value="Weekends Only">Weekends Only</option>
+                                    <option value="Evening Shift">Evening Shift</option>
+                                    <option value="Day Shift">Day Shift</option>
+                                    <option value="Custom Schedule">Custom Schedule</option>
+                                </optgroup>
+                            </select>
+                            <span class="errorMessage"></span>
+                        </div>
+                        <div class="formGroup">
+                            <label for="projectScale" class="formLabel">Project Scale</label>
+                            <select name="projectScale" id="projectScale" class="inputBox">
+                                <option value="" selected disabled>Select Project Scale</option>
+                                <option value="Large ">Large (Extensive Initiatives)</option>
+                                <option value="Medium">Medium (Well-Defined Project)</option>
+                                <option value="Small">Small (Quick Tasks)</option>
+                            </select>
+                            <span class="errorMessage"></span>
+                        </div>
+                        <div class="formGroup">
+                            <label for="projectTimeline" class="formLabel">Project Timeline</label>
+                            <select name="projectTimeline" id="projectTimeline" class="inputBox">
+                                <option value="" selected disabled>Select Project Timeline</option>
+                                <option value="More than 6 months">More than 6 months</option>
+                                <option value="3 to 6 months">3 to 6 months</option>
+                                <option value="1 to 3 months">1 to 3 months</option>
+                            </select>
+                            <span class="errorMessage"></span>
+                        </div>
+                    </div>
+                    <div class="formGroup2">
+                        <div class="formGroup">
+                            <label for="addSkillInput" class="formLabel">Search Skills or Add Your Own
+                                ( For best results, add 3-5 skills )
+                            </label>
+                            <div class="inputGroup">
+                                <input type="text" id="addSkillInput"
+                                    placeholder="Enter Skills (e.g., Python, Project Management)" class="inputBox">
+                                <button type="button" class="mainButton"
+                                    onclick="addSkillInputText(document.getElementById('addSkillInput'))"> Add Skill
+                                </button>
+                            </div>
+                            <div class="formGroup">
+                                <span class="formLabel">Selected Skills</span>
+                                <div class=" selectedContainer" id="selectedContainer">
+                                    <div class="skills">
+                                        <span id="skillAddElement">asdad</span>
+                                        <input type="hidden" name="skills[]" value="" id="skillAddInput">
+                                        <iconify-icon icon="octicon:x-12" onclick="removeSkill(this)"></iconify-icon>
+                                    </div>
+                                </div>
+                                <span class="formLabel">Recommended Skills</span>
+                                <div class="popularSkillContainer" id="popularSkillContainer">
+                                    <div class="skills">
+                                        <span id="skill">asdad</span>
+                                        <iconify-icon icon="uil:plus" onclick="addSkill(this)"></iconify-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="formGroup">
+                            <label for="description" class="formLabel">Description</label>
+                            <textarea name="description" id="description" placeholder="" class="inputBox"
+                                oninput="autoResizeTextarea(this)"></textarea>
+                            <span class="errorMessage"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttonContainer">
+                    <button type="button" class="mainButton"
+                        onclick="ValidatePost(document.getElementById('postForm'))">Submit</button>
+                </div>
+        </div>
+        </form>
     </div>
+    </div>
+
+    <template id="skillAdd">
+        <div class="skills">
+            <span id="skillAddElement">asdad</span>
+            <input type="hidden" name="skills[]" value="" id="skillAddInput">
+            <iconify-icon icon="octicon:x-12" onclick="removeSkill(this)"></iconify-icon>
+        </div>
+    </template>
+
+    <template id="skillRecommended">
+        <div class="skills">
+            <span id="skill">asdad</span>
+            <iconify-icon icon="uil:plus" onclick="addSkill(this)"></iconify-icon>
+        </div>
+    </template>
 </body>
 
 
