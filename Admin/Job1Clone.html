@@ -14,6 +14,12 @@
     <link rel="stylesheet" href="/Storage/Css/all.css">
     <link rel="stylesheet" href="/Storage/Css/JobPostingClone.css">
     <link rel="website icon" type="png " href="/Storage/Images/logo.png">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+        integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+
     <title>Profile Emp</title>
 </head>
 
@@ -135,27 +141,290 @@
         <div class="mainContainer">
             <div class="main">
                 <div class="title">
-                    <button>back</button>
+                    <button type="button" class="mainButton" onclick="BackButton()">back</button>
                 </div>
-                <table>
-                    <thead>
-                        <th>
-                        <td>dasd</td>
-                        <td>dasd</td>
-                        <td>dasd</td>
-                        <td>dasd</td>
-                        <td>dasd</td>
-                        </th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>das</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="tableContainer">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="profileTable">Profile</th>
+                                <th class="nameTable">Name</th>
+                                <th class="dateTable">Date Applied</th>
+                                <th class="statusTable">Status</th>
+                                <th class="actionTable">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-value="1">
+                                <td class="profileTable">
+                                    Mark
+                                </td>
+                                <td class="nameTable">
+                                    Mark
+                                </td>
+                                <td class="dateTable">
+                                    Otto
+                                </td>
+                                <td class="statusTable">
+                                    Otto
+                                </td>
+                                <td class="actionTable">
+                                    <iconify-icon icon="mdi:eye"
+                                        onclick="ViewDetails(document.querySelector('#viewDetails'))"></iconify-icon>
+                                    <iconify-icon icon="mingcute:check-fill"
+                                        onclick="AcceptApplicant(this.closest('tr').getAttribute('data-value'))"></iconify-icon>
+                                    <iconify-icon icon="octicon:x-12"
+                                        onclick="RejectApplicant(this.closest('tr').getAttribute('data-value'))"></iconify-icon>
+                                </td>
+                            </tr>
+                            <tr data-value="1">
+                                <td class="profileTable">
+                                    Mark
+                                </td>
+                                <td class="nameTable">
+                                    Mark
+                                </td>
+                                <td class="dateTable">
+                                    Otto
+                                </td>
+                                <td class="statusTable">
+                                    Otto
+                                </td>
+                                <td class="actionTable">
+                                    <iconify-icon icon="mdi:eye"
+                                        onclick="ViewDetails(document.querySelector('#viewDetails'))"></iconify-icon>
+                                    <iconify-icon icon="mingcute:check-fill"
+                                        onclick="AcceptApplicant(this.closest('tr').getAttribute('data-value'))"></iconify-icon>
+                                    <iconify-icon icon="octicon:x-12"
+                                        onclick="RejectApplicant(this.closest('tr').getAttribute('data-value'))"></iconify-icon>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
             </div>
         </div>
+        <div class="viewDetails" id="viewDetails" onclick="HideModal(event, this)">
+            <div class="detailsContainer" id="detailsContainer">
+                <div class="optionsContainer">
+                    <div class="options active">Resume</div>
+                    <div class="options ">Comment</div>
+                </div>
+                <div class="containers">
+                    <div class="container active">
+                        <div class="group">
+                            <div class="group1">
+                                <span id="name">John Kenneth Arellano</span>
+                                <a href="#" id="github">Github</a>
+                                <a href="#" id="linkedIn">Linked In</a>
+                            </div>
+                            <div class="group2">
+                                <span id="email">kennetharellano110818@gmail.com</span>
+                                <span id="number">09519077637</span>
+                            </div>
+                        </div>
+                        <div class="group3">
+                            <div class="groupTitle">
+                                SUMARRY
+                            </div>
+                            <span>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, veritatis quo sed eius
+                                sint minima at ullam. Inventore, debitis.
+                            </span>
+                        </div>
+                        <div class="group3">
+                            <div class="groupTitle">
+                                EDUCATION
+                            </div>
+                            <div class="group4">
+                                <ul>
+                                    <li>
+                                        <div class="group">
+                                            <div class="group1">
+                                                <span>Bulacan State Universty </span>
+                                                <span>Bachelor of Science in Infromation Technology;</span>
+                                            </div>
+                                            <div class="group2">
+                                                <span>Malolos, Bulacan</span>
+                                                <span>Oct. 2020 – Present</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="group">
+                                            <div class="group1">
+                                                <span>Ramona S. Trillana Senior High School </span>
+                                                <span>General Academic Strand;</span>
+                                            </div>
+                                            <div class="group2">
+                                                <span>Hagonoy, Bulacan</span>
+                                                <span> June. 2018 – April. 2020</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="group3">
+                            <div class="groupTitle">
+                                EXPERIENCE
+                            </div>
+                            <div class="group4">
+                                <ul>
+                                    <li>
+                                        <div class="group">
+                                            <div class="group1">
+                                                <span>Software Contracting </span>
+                                                <span>Backend Developer Freelancer</span>
+                                            </div>
+                                            <div class="group2">
+                                                <span>Feb 2022 - Present</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li class="li2">
+                                        <span> : Software Contracting </span>
+                                    </li>
+                                    <li class="li2">
+                                        <span> : Software Contracting </span>
+                                    </li>
+                                    <li class="li2">
+                                        <span> : Software Contracting </span>
+                                    </li>
+                                    <li class="li2">
+                                        <span> : Software Contracting </span>
+                                    </li>
+                                    <li class="li2">
+                                        <span> : Software Contracting </span>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="group3">
+                            <div class="groupTitle">
+                                PROJECTS
+                            </div>
+                            <div class="group4">
+                                <ul>
+                                    <li>
+                                        <span>Software Contracting </span>
+                                    </li>
+                                    <li>
+                                        <span>Software Contracting </span>
+                                    </li>
+                                    <li>
+                                        <span>Software Contracting </span>
+                                    </li>
+                                    <li>
+                                        <span>Software Contracting </span>
+                                    </li>
+                                    <li>
+                                        <span>Software Contracting </span>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="group3">
+                            <div class="groupTitle">
+                                TECHNICAL SKILLS
+                            </div>
+                            <div class="group4">
+                                <ul>
+                                    <li>
+                                        <span>Software Contracting </span>
+                                    </li>
+                                    <li>
+                                        <span>Software Contracting </span>
+                                    </li>
+                                    <li>
+                                        <span>Software Contracting </span>
+                                    </li>
+                                    <li>
+                                        <span>Software Contracting </span>
+                                    </li>
+                                    <li>
+                                        <span>Software Contracting </span>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="postContainer">
+                            <span class="postTitle" id="postTitle">Hanap pookie</span>
+                        </div>
+                        <div class="commentContainer">
+
+                            <div class="userReply">
+                                <div class="imgHolder">
+                                    <img src="/Storage/Images/Tadashi.png" alt="" id="userImg">
+                                </div>
+                                <div class="userReplyContainer" id="userReplyContainer">
+                                    <span class="replyUserContent">
+                                        Lorem ipsum dolor,equi laboriosam
+                                        necessitatibus dicta?
+                                    </span>
+                                    <span class="userDateTime" id="userDateTime">December 19, 2023 12:43 PM</span>
+                                </div>
+                            </div>
+                            <div class="providerReply">
+                                <div class="providerReplyContainer" id="providerReplyContainer">
+                                    <span class="replyProviderContent">
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                                        elit. Molestiae eius sunt molestias modi voluptas nihil, sequi laboriosam
+                                        necessitatibus dicta?
+                                    </span>
+                                    <span class="providerDateTime" id="providerDateTime">December 19, 2023 12:43
+                                        PM</span>
+                                </div>
+                                <div class="imgHolder">
+                                    <img src="/Storage/Images/Tadashi.png" alt="" id="userImg">
+                                </div>
+                            </div>
+                        </div>
+                        <form id="submitReply">
+                            <textarea name="replyInput" id="replyInput" placeholder="Reply here" autocomplete="off"
+                                oninput="autoResizeTextarea(this)" spellcheck="false"></textarea>
+                            <button type="button" class="mainButton"
+                                onclick="ValidateReply(document.querySelector('#replyInput'),document.querySelector('#submitReply'))"><iconify-icon
+                                    icon="ic:round-send"></iconify-icon></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <template id="userReply">
+            <div class="userReply">
+                <div class="imgHolder">
+                    <img src="/Storage/Images/Tadashi.png" alt="" id="userImg">
+                </div>
+                <div class="userReplyContainer" id="userReplyContainer">
+                    <span class="replyUserContent">
+                    </span>
+                    <span class="userDateTime" id="userDateTime"></span>
+                </div>
+            </div>
+        </template>
+        <template id="providerReply">
+            <div class="providerReply">
+                <div class="providerReplyContainer" id="providerReplyContainer">
+                    <span class="replyProviderContent">
+
+                    </span>
+                    <span class="providerDateTime" id="providerDateTime"></span>
+                </div>
+                <div class="imgHolder">
+                    <img src="/Storage/Images/Tadashi.png" alt="" id="userImg">
+                </div>
+            </div>
+        </template>
 </body>
 
 
