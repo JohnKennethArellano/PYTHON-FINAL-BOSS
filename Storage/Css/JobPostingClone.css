@@ -482,6 +482,7 @@ tbody tr td iconify-icon:nth-child(3):hover {
     line-height: 1.5vw;
 }
 
+
 .groupTitle {
     width: 100%;
     border: solid 1px var(--lightgray);
@@ -514,4 +515,82 @@ tbody tr td iconify-icon:nth-child(3):hover {
 .li2 {
     list-style: circle;
     margin: 0 0 0 1.5vw;
+}
+
+@media print {
+    @page {
+        size: A4;
+        margin: 2cm;
+    }
+
+    body {
+        margin: 0;
+        /* Reset body margin */
+        padding: 0;
+        /* Reset body padding */
+    }
+
+    .mainButton {
+        display: none;
+    }
+
+    .navbar {
+        display: none !important;
+    }
+
+    .sideBar {
+        display: none;
+    }
+
+    .options {
+        display: none;
+    }
+
+    .mainContainer {
+        display: none;
+    }
+
+    .containers {
+        width: fit-content;
+        height: fit-content;
+        border-color: var(--white);
+    }
+
+    .group2 {
+        font-size: 1.6vh;
+    }
+
+    .group1 span {
+        font-size: 1.8vh;
+    }
+
+    .group1 span:nth-child(2), .group2 span:nth-child(2) {
+        font-size: 1.6vh;
+    }
+
+    .group1 a {
+        font-size: 1.6vh;
+    }
+
+    .group3 {
+        margin-top: 1vh;
+        line-height: 1.6vh;
+    }
+
+    .group3 span {
+        padding: .5vh 0 0 0;
+    }
+
+    .groupTitle {
+        font-size: 1.6vh;
+        padding-left: 1vh;
+    }
+
+    .groupTitle::first-letter {
+        font-size: 1.9vh;
+    }
+
+    .group4 ul li {
+        margin-top: 1vh;
+    }
 }

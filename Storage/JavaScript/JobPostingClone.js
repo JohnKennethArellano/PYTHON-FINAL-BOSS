@@ -90,3 +90,8 @@ function HideModal(event, el) {
 function BackButton() {
   window.location.href = "/Admin/Job1.html";
 }
+
+function PrintResume() {
+  const printElement = document.querySelector("#print");
+  window.print(printElement);
+}

@@ -20,6 +20,13 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+        integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.5.13"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
     <title>Profile Emp</title>
 </head>
 
@@ -212,7 +219,7 @@
                     <div class="options ">Comment</div>
                 </div>
                 <div class="containers">
-                    <div class="container active">
+                    <div class="container active" id="print">
                         <div class="group">
                             <div class="group1">
                                 <span id="name">John Kenneth Arellano</span>
@@ -223,6 +230,8 @@
                                 <span id="email">kennetharellano110818@gmail.com</span>
                                 <span id="number">09519077637</span>
                             </div>
+                            <div class="mainButton" onClick="document.title = 'Resume';window.print();">Print
+                            </div>
                         </div>
                         <div class="group3">
                             <div class="groupTitle">
@@ -231,6 +240,7 @@
                             <span>
                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, veritatis quo sed eius
                                 sint minima at ullam. Inventore, debitis.
+                                lorem50
                             </span>
                         </div>
                         <div class="group3">
@@ -351,6 +361,7 @@
                                     <li>
                                         <span>Software Contracting </span>
                                     </li>
+
                                 </ul>
 
                             </div>
