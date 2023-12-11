@@ -1,0 +1,193 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --orangeMain: #E57B1E;
+    --orangeSecond: #FEC887;
+    --black: #212121;
+    --white: #fff;
+    --lightgray: #979797;
+    --red: #EF5350;
+    --green: #66BB6A;
+    --lightred: #EF9A9A;
+    --medium: 1vw;
+    --larger: 1.3vw;
+    --small: .8vw;
+}
+
+body {
+    font-family: 'Lexend', sans-serif;
+
+}
+
+.mainContainer {
+    overflow-y: scroll;
+    padding-top: 1vh;
+}
+
+.mainContainer::-webkit-scrollbar {
+    display: none;
+
+}
+
+.main {
+    width: 100%;
+    height: fit-content;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.tableContainer {
+    margin-top: 1vw;
+    padding: .5vw;
+    background-color: var(--white);
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.43);
+    border-radius: .4vw;
+}
+
+table {
+    width: 100%;
+    height: fit-content;
+    border-collapse: separate;
+    border-spacing: 0 .2vw;
+}
+
+thead {
+    display: table;
+    border-radius: .2vw;
+    background: #fec8878c;
+    width: 100%;
+    height: 7vh;
+}
+
+th:first-child {
+    -moz-border-radius: .2vw 0 0 .2vw;
+    -webkit-border-radius: .2vw 0 0 .2vw;
+    border-radius: .2vw 0 0 .2vw;
+}
+
+th:last-child {
+    -moz-border-radius: 0 .2vw .2vw 0;
+    -webkit-border-radius: 0 .2vw .2vw 0;
+    border-radius: 0 .2vw .2vw 0;
+}
+
+thead tr th, tbody tr td {
+    text-align: center;
+    font-size: var(--medium);
+    color: var(--black);
+}
+
+/* tbody:before {
+    line-height: .5em;
+    content: "\200C";
+    display: block;
+
+} */
+
+tbody {
+    display: block;
+    width: 100%;
+    height: 66vh;
+    overflow-y: scroll;
+}
+
+tbody::-webkit-scrollbar {
+    display: none;
+}
+
+tbody tr {
+    width: 100%;
+    padding: 2vh 0;
+    display: table;
+    height: fit-content;
+    border: solid 1px #97979749;
+    border-width: 0 0 1px 0;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #97979725;
+}
+
+tbody tr td {
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+}
+
+tbody tr td div {
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px var(--lightgray);
+    border-width: 1px 0 1px 0;
+}
+
+tbody tr td:first-child div {
+    border: solid 1px var(--lightgray);
+    border-radius: .2vw 0 0 .2vw;
+    border-width: 1px 0 1px 1px;
+}
+
+tbody tr td:last-child div {
+    border: solid 1px var(--lightgray);
+    border-radius: 0 .2vw .2vw 0;
+    border-width: 1px 1px 1px 0;
+}
+
+.profileTable {
+    width: 10vw;
+}
+
+.nameTable {
+    width: 20vw;
+}
+
+.dateTable {
+    width: 15vw;
+}
+
+.positionTable {
+    width: 15vw;
+}
+
+.statusTable {
+    width: 10vw;
+}
+
+.actionTable {
+    width: 10vw;
+}
+
+.actionContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1vh;
+    font-size: var(--medium);
+}
+
+tbody tr td iconify-icon {
+    cursor: pointer;
+    transition: all ease .3s;
+    color: var(--black);
+}
+
+tbody tr td iconify-icon:first-child:hover {
+    color: var(--orangeMain);
+}
+
+tbody tr td iconify-icon:nth-child(2):hover {
+    color: var(--green);
+}
+
+tbody tr td iconify-icon:nth-child(3):hover {
+    color: var(--red);
+}
